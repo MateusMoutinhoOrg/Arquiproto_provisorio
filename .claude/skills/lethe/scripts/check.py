@@ -437,6 +437,8 @@ def check_state(project, path):
             project.report(path, 3, "<{}> changes the screen without a redirect: make it another state".format(node.tag))
         if node.tag in ("iframe", "object", "embed"):
             project.report(path, 5, "<{}> brings content from elsewhere, and a state holds its whole screen".format(node.tag))
+        if node.tag == "base" or node.attrs.get("target", "_self").lower() != "_self":
+            project.report(path, 3, "{} opens another tab or frame, and an action redirects the current one".format(node))
 
     for form in forms:
         check_form(project, path, form, page)
@@ -500,6 +502,12 @@ def check_hub(project):
         project.report(path, 7, "has a script or a form, and the hub only lists states")
     if any("data-info-popup" in node.attrs for node in tree.find_all("template")):
         project.report(path, 7, "has an Info Popup, and the hub only lists states")
+    bases = tree.find_all("base")
+    if len(bases) != 1 or bases[0].attrs.get("target") != "_blank" or "href" in bases[0].attrs:
+        project.report(path, 7, "needs a single <base target=\"_blank\"> without href, so every state opens in a new tab and the hub stays open")
+    for node in tree.walk():
+        if node.tag != "base" and "target" in node.attrs:
+            project.report(path, 7, "{} has its own target, and the <base> already opens every link in a new tab".format(node))
     check_local_paths(project, path, tree)
 
     listed = {}

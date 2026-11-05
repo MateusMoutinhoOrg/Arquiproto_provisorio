@@ -66,7 +66,7 @@ Pages/
 4. **Conditions only read the current screen.** An action can check current input values against fixed values, against each other, or for length or format. Every condition has an `else`, so every path ends in a redirect.
 5. **A state stands alone.** Each `<state>.html` holds its whole screen, including every link, with no framework or build step, and works when opened directly in a browser. The only shared files are the styles and form behavior in `Assets/` and the [Info Popup](#info-popup) library. They never add markup or links to the screen, except for `info-popup.js`, the only shared file that adds markup, limited to the `?` button and the popup, with no links. Actions are plain links. Forms use `novalidate`, because browser validation would block the redirect, and `onSubmit` from `Assets/js/app.js`, which sets `location.href`, because a native submit would add `?` to the URL, and resets the form on `pageshow`, because the browser's back button would restore typed values. A page's conditions live in `Assets/js/<Page>.js`, loaded as a classic script, because browsers block modules on `file://`.
 6. **Every state documents itself.** Every action of rule 3 has an Info Popup next to it, and every state has one next to its `<h1>`. A state with a modal repeats that one next to the modal's title, because the `<h1>` behind the modal can't be clicked.
-7. **The site has one default entry, the [Test Hub](#test-hub).** The `index.html` at the root is what opens when no state is named. It is not a state and not part of the product: it only lists every page and state, each with a plain link and what it does. It has no forms, scripts or Info Popups, and remembers nothing.
+7. **The site has one default entry, the [Test Hub](#test-hub).** The `index.html` at the root is what opens when no state is named. It is not a state and not part of the product: it only lists every page and state, each with a plain link and what it does. Every link opens in a new tab, with `<base target="_blank">` in its `<head>`, so the hub stays open while a state is tested. It has no forms, scripts or Info Popups, and remembers nothing.
 8. **The repository is the site.** GitHub Pages publishes its root as it is, with no build, because an empty `.nojekyll` at the root turns off Jekyll. Every path to a file of the project is relative, because the site is served from `/<repository>/`, and matches the case of the file, because GitHub Pages is case-sensitive, unlike macOS and Windows.
 
 ## State map
@@ -132,6 +132,7 @@ The page at the root of the site, from which anyone testing the prototype can se
 - The `<p>` before the first `<section>` says which state to start at and what the test needs, such as a demo login.
 - The `<h2>` is the name of the page, and the `<p>` below it is what the page is for: the first paragraph of the Info Popup next to the `<h1>` of its states.
 - Each `<li>` is a link named after the state, followed by what the user sees and when: the second paragraph of that same Info Popup. A change to that popup is also made in the hub.
+- Every link opens in a new tab, through the `<base target="_blank">` in the `<head>`, so the hub stays open as the place to come back to. Don't put a `target` on a single link, because the `<base>` already covers them all. The states keep opening in the same tab, because an action of a state is a redirect, not a new tab.
 
 ## Templates
 
@@ -242,6 +243,7 @@ The whole screen stays behind the modal, marked `inert`, with its usual popups. 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worklist test hub</title>
+    <base target="_blank">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MateusMoutinhoOrg/Lethe@main/Lib/test-hub.css">
 </head>
 
