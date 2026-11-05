@@ -1,6 +1,6 @@
-# Arquiproto
+# Lethe
 
-A minimal standard for prototyping web applications as a set of memoryless states.
+A minimal standard for prototyping web applications as a set of memoryless states, named after the river of forgetfulness in Greek mythology.
 
 ## Principle
 
@@ -39,15 +39,15 @@ Pages/
 
 ## Info Popup
 
-A `?` button next to a component, which opens a popup explaining what the action does and which states it leads to. It is a library of the architecture, not a file of the project: it lives in `Lib/` of [this repository](https://github.com/MateusMoutinhoOrg/Arquiproto_provisorio), which is public, and depends on nothing else.
+A `?` button next to a component, which opens a popup explaining what the action does and which states it leads to. It is a library of the architecture, not a file of the project: it lives in `Lib/` of [this repository](https://github.com/MateusMoutinhoOrg/Lethe), which is public, and depends on nothing else.
 
 ### Usage
 
 Load the two files in each state from their public URL:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MateusMoutinhoOrg/Arquiproto_provisorio@main/Lib/info-popup.css">
-<script src="https://cdn.jsdelivr.net/gh/MateusMoutinhoOrg/Arquiproto_provisorio@main/Lib/info-popup.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MateusMoutinhoOrg/Lethe@main/Lib/info-popup.css">
+<script src="https://cdn.jsdelivr.net/gh/MateusMoutinhoOrg/Lethe@main/Lib/info-popup.js"></script>
 ```
 
 Then put a `<template data-info-popup>` right after the component, with the popup's text inside. A `<template>` renders nothing, so the state works the same without the script.
@@ -95,7 +95,7 @@ In `index.html`, load the stylesheet and put `class="test-hub"` on the `<body>`.
 
 ```html
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MateusMoutinhoOrg/Arquiproto_provisorio@main/Lib/test-hub.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MateusMoutinhoOrg/Lethe@main/Lib/test-hub.css">
 </head>
 
 <body class="test-hub">
@@ -131,7 +131,7 @@ In the repository's Settings → Pages, choose **Deploy from a branch**, with th
 
 ## Example
 
-`Pages/` holds Worklist, a small task manager with 60 states in 21 pages. Open `index.html` in a browser, or the [published site](https://mateusmoutinhoorg.github.io/Arquiproto_provisorio/), to see the Test Hub. To run the app, start at `LoginScreen/initial` and log in with `user@example.com` and `password123`.
+`Pages/` holds Worklist, a small task manager with 60 states in 21 pages. Open `index.html` in a browser, or the [published site](https://mateusmoutinhoorg.github.io/Lethe/), to see the Test Hub. To run the app, start at `LoginScreen/initial` and log in with `user@example.com` and `password123`.
 
 ```
 LoginScreen/initial
