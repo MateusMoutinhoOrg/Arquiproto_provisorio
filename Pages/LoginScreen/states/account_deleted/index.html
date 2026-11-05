@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginScreen/account_deleted</title>
+    <link rel="stylesheet" href="../../../../Assets/css/app.css">
+</head>
+
+<body>
+    <main class="auth">
+        <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+
+        <div class="card auth-card">
+            <h1>Log in</h1>
+            <p class="muted">Welcome back. Pick up where your team left off.</p>
+
+            <p class="alert alert-success" role="status">Your account was deleted.</p>
+
+            <form id="login" class="form" novalidate autocomplete="off">
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email">
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password">
+                </div>
+
+                <button class="btn btn-primary btn-block">Log in</button>
+            </form>
+
+            <a class="auth-link" href="../../../ForgotPassword/states/initial/index.html">Forgot password?</a>
+        </div>
+
+        <p class="auth-foot">New to Worklist? <a href="../../../CreateAccount/states/initial/index.html">Create account</a></p>
+
+        <p class="demo-hint">Demo login: user@example.com / password123</p>
+    </main>
+
+    <script src="../../../../Assets/js/app.js"></script>
+    <script src="../../../../Assets/js/LoginScreen.js"></script>
+</body>
+
+</html>

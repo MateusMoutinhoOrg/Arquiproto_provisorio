@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks/task_created</title>
+    <link rel="stylesheet" href="../../../../Assets/css/app.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+            <nav class="nav">
+                <a class="nav-link nav-home" href="../../../Home/states/initial/index.html">Home</a>
+                <a class="nav-link nav-tasks" href="../../../Tasks/states/initial/index.html" aria-current="page">Tasks</a>
+                <a class="nav-link nav-projects" href="../../../Projects/states/initial/index.html">Projects</a>
+                <a class="nav-link nav-settings" href="../../../SettingsProfile/states/initial/index.html">Settings</a>
+            </nav>
+            <div class="sidebar-user">
+                <span class="avatar">ST</span>
+                <span class="sidebar-user-text"><strong>Sam Taylor</strong><small>user@example.com</small></span>
+            </div>
+            <a class="nav-link nav-logout" href="../../../LoginScreen/states/initial/index.html">Log out</a>
+        </aside>
+
+        <main class="main">
+            <div class="page-head">
+                <div>
+                    <h1>Tasks</h1>
+                    <p class="muted">Everything on your plate, across all projects.</p>
+                </div>
+                <a class="btn btn-primary" href="../../../NewTask/states/initial/index.html">New task</a>
+            </div>
+
+            <div class="toolbar">
+                <nav class="tabs" aria-label="Filter tasks">
+                    <a class="tab" href="../../../Tasks/states/initial/index.html" aria-current="page">All<span class="tab-count">4</span></a>
+                    <a class="tab" href="../../../Tasks/states/open/index.html">Open<span class="tab-count">3</span></a>
+                    <a class="tab" href="../../../Tasks/states/done/index.html">Done<span class="tab-count">1</span></a>
+                </nav>
+                <form id="search" class="search" role="search" novalidate autocomplete="off">
+                    <input id="search-input" name="search" type="search" placeholder="Search (try &quot;release&quot;)" aria-label="Search tasks">
+                    <button class="btn">Search</button>
+                </form>
+            </div>
+
+            <p class="alert alert-success" role="status">Task created.</p>
+
+            <div class="list">
+                <div class="task-row">
+                    <span class="status status-open" role="img" aria-label="Open"></span>
+                    <span class="task-main">
+                        <span class="task-title">New task</span>
+                        <span class="task-meta">Website relaunch · Medium priority · No due date</span>
+                    </span>
+                    <span class="badge badge-new">New</span>
+                </div>
+                <a class="task-row" href="../../../TaskCheckoutBug/states/initial/index.html">
+                    <span class="status status-open" role="img" aria-label="Open"></span>
+                    <span class="task-main">
+                        <span class="task-title">Fix checkout bug</span>
+                        <span class="task-meta">Mobile app · High priority · Nov 3</span>
+                    </span>
+                    <span class="badge badge-overdue">Overdue</span>
+                </a>
+                <a class="task-row" href="../../../TaskReleaseNotes/states/initial/index.html">
+                    <span class="status status-open" role="img" aria-label="Open"></span>
+                    <span class="task-main">
+                        <span class="task-title">Write release notes</span>
+                        <span class="task-meta">Website relaunch · Medium priority · Nov 5</span>
+                    </span>
+                    <span class="badge badge-today">Today</span>
+                </a>
+                <a class="task-row is-done" href="../../../TaskPrivacyPolicy/states/initial/index.html">
+                    <span class="status status-done" role="img" aria-label="Done"></span>
+                    <span class="task-main">
+                        <span class="task-title">Update privacy policy</span>
+                        <span class="task-meta">Website relaunch · Low priority · Oct 30</span>
+                    </span>
+                    <span class="badge badge-done">Done</span>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../../../Assets/js/app.js"></script>
+    <script src="../../../../Assets/js/Tasks.js"></script>
+</body>
+
+</html>

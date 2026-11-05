@@ -5,36 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoginScreen/initial</title>
-    <style>
-        body { font-family: sans-serif; max-width: 320px; margin: 4rem auto; padding: 0 1rem; }
-        input, button { display: block; width: 100%; box-sizing: border-box; margin-bottom: .5rem; padding: .5rem; }
-    </style>
+    <link rel="stylesheet" href="../../../../Assets/css/app.css">
 </head>
 
 <body>
-    <h1>Login</h1>
+    <main class="auth">
+        <div class="brand"><span class="brand-mark">W</span>Worklist</div>
 
-    <form id="login" novalidate autocomplete="off">
-        <input id="email" type="email" placeholder="Email">
-        <input id="password" type="password" placeholder="Password">
-        <button>Confirm</button>
-    </form>
+        <div class="card auth-card">
+            <h1>Log in</h1>
+            <p class="muted">Welcome back. Pick up where your team left off.</p>
 
-    <a href="../../../CreateAccount/states/initial/index.html">Create account</a>
+            <form id="login" class="form" novalidate autocomplete="off">
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email">
+                </div>
 
-    <script>
-        window.onpageshow = function () {
-            document.getElementById("login").reset();
-        };
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password">
+                </div>
 
-        document.getElementById("login").onsubmit = function (event) {
-            event.preventDefault();
-            var email = document.getElementById("email").value;
-            location.href = email === "user@example.com"
-                ? "../../../Home/states/initial/index.html"
-                : "../email_already_exists/index.html";
-        };
-    </script>
+                <button class="btn btn-primary btn-block">Log in</button>
+            </form>
+
+            <a class="auth-link" href="../../../ForgotPassword/states/initial/index.html">Forgot password?</a>
+        </div>
+
+        <p class="auth-foot">New to Worklist? <a href="../../../CreateAccount/states/initial/index.html">Create account</a></p>
+
+        <p class="demo-hint">Demo login: user@example.com / password123</p>
+    </main>
+
+    <script src="../../../../Assets/js/app.js"></script>
+    <script src="../../../../Assets/js/LoginScreen.js"></script>
 </body>
 
 </html>

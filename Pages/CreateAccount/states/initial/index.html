@@ -5,33 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CreateAccount/initial</title>
-    <style>
-        body { font-family: sans-serif; max-width: 320px; margin: 4rem auto; padding: 0 1rem; }
-        input, button { display: block; width: 100%; box-sizing: border-box; margin-bottom: .5rem; padding: .5rem; }
-    </style>
+    <link rel="stylesheet" href="../../../../Assets/css/app.css">
 </head>
 
 <body>
-    <h1>Create account</h1>
+    <main class="auth">
+        <div class="brand"><span class="brand-mark">W</span>Worklist</div>
 
-    <form id="create" novalidate autocomplete="off">
-        <input id="email" type="email" placeholder="Email">
-        <input id="password" type="password" placeholder="Password">
-        <button>Create</button>
-    </form>
+        <div class="card auth-card">
+            <h1>Create account</h1>
+            <p class="muted">Start organizing your team's work in minutes.</p>
 
-    <a href="../../../LoginScreen/states/initial/index.html">Back to login</a>
+            <form id="create" class="form" novalidate autocomplete="off">
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text">
+                </div>
 
-    <script>
-        window.onpageshow = function () {
-            document.getElementById("create").reset();
-        };
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email">
+                </div>
 
-        document.getElementById("create").onsubmit = function (event) {
-            event.preventDefault();
-            location.href = "../../../Home/states/initial/index.html";
-        };
-    </script>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password">
+                </div>
+
+                <div class="field">
+                    <label for="confirm">Confirm password</label>
+                    <input id="confirm" name="confirm" type="password">
+                </div>
+
+                <button class="btn btn-primary btn-block">Create account</button>
+            </form>
+        </div>
+
+        <p class="auth-foot">Already have an account? <a href="../../../LoginScreen/states/initial/index.html">Back to login</a></p>
+    </main>
+
+    <script src="../../../../Assets/js/app.js"></script>
+    <script src="../../../../Assets/js/CreateAccount.js"></script>
 </body>
 
 </html>

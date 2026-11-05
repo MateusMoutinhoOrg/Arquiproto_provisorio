@@ -1,3 +1,3 @@
 # LoginScreen/initial
 
-Empty login form, shown when the user accesses `/`.
+Empty login form, shown when the user accesses `/` or logs out.

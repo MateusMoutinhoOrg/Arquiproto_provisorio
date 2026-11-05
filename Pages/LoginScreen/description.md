@@ -6,7 +6,10 @@ Authentication of an existing user.
 
 - email input
 - password input
-- confirm button
-  - if email is `user@example.com` → Home/initial
-  - else → LoginScreen/email_already_exists
-- create account button → CreateAccount/initial
+- log in button
+  - if email or password is empty → LoginScreen/required_fields
+  - if email is `user@example.com` and password is `password123` → Home/initial
+  - else → LoginScreen/invalid_credentials
+- forgot password link → ForgotPassword/initial
+- create account link → CreateAccount/initial
+- demo login hint

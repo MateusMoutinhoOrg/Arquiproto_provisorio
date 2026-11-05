@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskReleaseNotes/saved</title>
+    <link rel="stylesheet" href="../../../../Assets/css/app.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+            <nav class="nav">
+                <a class="nav-link nav-home" href="../../../Home/states/initial/index.html">Home</a>
+                <a class="nav-link nav-tasks" href="../../../Tasks/states/initial/index.html" aria-current="page">Tasks</a>
+                <a class="nav-link nav-projects" href="../../../Projects/states/initial/index.html">Projects</a>
+                <a class="nav-link nav-settings" href="../../../SettingsProfile/states/initial/index.html">Settings</a>
+            </nav>
+            <div class="sidebar-user">
+                <span class="avatar">ST</span>
+                <span class="sidebar-user-text"><strong>Sam Taylor</strong><small>user@example.com</small></span>
+            </div>
+            <a class="nav-link nav-logout" href="../../../LoginScreen/states/initial/index.html">Log out</a>
+        </aside>
+
+        <main class="main">
+            <a class="back-link" href="../../../Tasks/states/initial/index.html">All tasks</a>
+
+            <div class="page-head">
+                <div>
+                    <h1>Write release notes</h1>
+                    <p class="muted"><a href="../../../ProjectWebsite/states/initial/index.html">Website relaunch</a></p>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-primary" href="../../../TaskReleaseNotes/states/completed/index.html">Mark as done</a>
+                    <a class="btn" href="../../../TaskReleaseNotesEdit/states/initial/index.html">Edit</a>
+                    <a class="btn btn-danger-outline" href="../../../TaskReleaseNotes/states/delete_confirm/index.html">Delete</a>
+                </div>
+            </div>
+
+            <p class="alert alert-success" role="status">Changes saved.</p>
+
+            <div class="detail-grid">
+                <section class="card">
+                    <h2>Description</h2>
+                    <p>Summarize what changed in the relaunch for customers and the support team.</p>
+                </section>
+                <aside class="card">
+                    <dl class="meta">
+                        <div><dt>Status</dt><dd><span class="badge badge-open">Open</span></dd></div>
+                        <div><dt>Priority</dt><dd><span class="badge badge-medium">Medium</span></dd></div>
+                        <div><dt>Due date</dt><dd>Nov 5 (today)</dd></div>
+                        <div><dt>Assignee</dt><dd>Sam Taylor</dd></div>
+                    </dl>
+                </aside>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

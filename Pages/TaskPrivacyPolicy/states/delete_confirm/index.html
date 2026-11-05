@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskPrivacyPolicy/delete_confirm</title>
+    <link rel="stylesheet" href="../../../../Assets/css/app.css">
+</head>
+
+<body>
+    <div class="app" inert>
+        <aside class="sidebar">
+            <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+            <nav class="nav">
+                <a class="nav-link nav-home" href="../../../Home/states/initial/index.html">Home</a>
+                <a class="nav-link nav-tasks" href="../../../Tasks/states/initial/index.html" aria-current="page">Tasks</a>
+                <a class="nav-link nav-projects" href="../../../Projects/states/initial/index.html">Projects</a>
+                <a class="nav-link nav-settings" href="../../../SettingsProfile/states/initial/index.html">Settings</a>
+            </nav>
+            <div class="sidebar-user">
+                <span class="avatar">ST</span>
+                <span class="sidebar-user-text"><strong>Sam Taylor</strong><small>user@example.com</small></span>
+            </div>
+            <a class="nav-link nav-logout" href="../../../LoginScreen/states/initial/index.html">Log out</a>
+        </aside>
+
+        <main class="main">
+            <a class="back-link" href="../../../Tasks/states/initial/index.html">All tasks</a>
+
+            <div class="page-head">
+                <div>
+                    <h1>Update privacy policy</h1>
+                    <p class="muted"><a href="../../../ProjectWebsite/states/initial/index.html">Website relaunch</a></p>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-primary" href="../../../TaskPrivacyPolicy/states/reopened/index.html">Reopen</a>
+                    <a class="btn" href="../../../TaskPrivacyPolicyEdit/states/initial/index.html">Edit</a>
+                    <a class="btn btn-danger-outline" href="../../../TaskPrivacyPolicy/states/delete_confirm/index.html">Delete</a>
+                </div>
+            </div>
+
+            <div class="detail-grid">
+                <section class="card">
+                    <h2>Description</h2>
+                    <p>Add the new analytics provider and review the data retention section.</p>
+                </section>
+                <aside class="card">
+                    <dl class="meta">
+                        <div><dt>Status</dt><dd><span class="badge badge-done">Done</span></dd></div>
+                        <div><dt>Priority</dt><dd><span class="badge badge-low">Low</span></dd></div>
+                        <div><dt>Due date</dt><dd>Oct 30</dd></div>
+                        <div><dt>Assignee</dt><dd>Sam Taylor</dd></div>
+                    </dl>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <h2 id="modal-title">Delete this task?</h2>
+            <p class="muted">"Update privacy policy" will be removed. This can't be undone.</p>
+            <div class="form-actions form-actions-end">
+                <a class="btn" href="../../../TaskPrivacyPolicy/states/initial/index.html">Cancel</a>
+                <a class="btn btn-danger" href="../../../Tasks/states/privacy_policy_deleted/index.html">Delete task</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

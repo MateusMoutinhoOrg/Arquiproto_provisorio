@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnboardingProject/initial</title>
+    <link rel="stylesheet" href="../../../../Assets/css/app.css">
+</head>
+
+<body>
+    <main class="auth">
+        <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+
+        <div class="card auth-card">
+            <ol class="steps">
+                <li class="step is-done">Workspace</li>
+                <li class="step is-done">Team</li>
+                <li class="step" aria-current="step">First project</li>
+            </ol>
+
+            <div>
+                <h1>Create your first project</h1>
+                <p class="muted">Pick a starting point. You can change it later.</p>
+            </div>
+
+            <form id="project" class="form" novalidate autocomplete="off">
+                <fieldset>
+                    <legend>Template</legend>
+                    <label class="check">
+                        <input type="radio" name="template" value="Blank project" checked>
+                        <span><strong>Blank project</strong><span class="muted small">Start from an empty list.</span></span>
+                    </label>
+                    <label class="check">
+                        <input type="radio" name="template" value="Product launch">
+                        <span><strong>Product launch</strong><span class="muted small">Comes with launch checklist tasks.</span></span>
+                    </label>
+                    <label class="check">
+                        <input type="radio" name="template" value="Marketing campaign">
+                        <span><strong>Marketing campaign</strong><span class="muted small">Comes with planning and review tasks.</span></span>
+                    </label>
+                </fieldset>
+
+                <button class="btn btn-primary btn-block">Finish setup</button>
+            </form>
+        </div>
+
+        <p class="auth-foot"><a href="../../../OnboardingInvite/states/initial/index.html">Back</a></p>
+    </main>
+
+    <script src="../../../../Assets/js/app.js"></script>
+    <script src="../../../../Assets/js/OnboardingProject.js"></script>
+</body>
+
+</html>
