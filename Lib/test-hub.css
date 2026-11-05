@@ -1,0 +1,121 @@
+/* Test Hub: the list of pages and states at the root of a site. Stands alone: it uses nothing from other stylesheets. */
+
+.test-hub {
+    margin: 0;
+    background: #f5f6f3;
+    color: #1d2522;
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+}
+
+.test-hub main {
+    box-sizing: border-box;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 24px 64px;
+}
+
+.test-hub h1 {
+    margin: 0 0 8px;
+    font-size: 1.6rem;
+    font-weight: 650;
+    letter-spacing: -.01em;
+    line-height: 1.25;
+}
+
+.test-hub main > p {
+    margin: 0 0 32px;
+    color: #56625d;
+}
+
+.test-hub a {
+    color: #0f6e5f;
+}
+
+.test-hub a:hover {
+    color: #0b5649;
+}
+
+.test-hub a:focus-visible {
+    outline: 2px solid #0f6e5f;
+    outline-offset: 2px;
+}
+
+.test-hub code,
+.test-hub li a {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+}
+
+/* A page: its name and purpose on the left, its states on the right. */
+
+.test-hub section {
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 32px;
+    padding: 20px 0;
+    border-top: 1px solid #e2e5df;
+}
+
+.test-hub h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+}
+
+.test-hub section > p {
+    margin: 4px 0 0;
+    color: #56625d;
+    font-size: 13px;
+}
+
+.test-hub ul {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* A state: its link, then the text that follows it, which the grid places in a column of its own. */
+
+.test-hub li {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: baseline;
+    padding: 4px 0;
+}
+
+.test-hub li a {
+    overflow-wrap: anywhere;
+}
+
+/* On a narrow screen everything stacks, and the links grow to be easy to tap. */
+
+@media (max-width: 760px) {
+    .test-hub main {
+        padding: 24px 16px 48px;
+    }
+
+    .test-hub section {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: none;
+    }
+
+    .test-hub ul {
+        grid-column: 1;
+        grid-row: auto;
+        margin-top: 8px;
+    }
+
+    .test-hub li {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .test-hub li a {
+        padding: 8px 0 2px;
+    }
+}

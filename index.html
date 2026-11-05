@@ -3,12 +3,223 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=Pages/LoginScreen/initial.html">
-    <title>Arquiproto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worklist test hub</title>
+    <link rel="stylesheet" href="Lib/test-hub.css">
 </head>
 
-<body>
+<body class="test-hub">
+    <main>
+        <h1>Worklist test hub</h1>
+        <p>Start at <a href="Pages/LoginScreen/initial.html">LoginScreen/initial</a> and log in with <code>user@example.com</code> and <code>password123</code>.</p>
 
+        <section>
+            <h2>LoginScreen</h2>
+            <p>Authentication of an existing user.</p>
+            <ul>
+                <li><a href="Pages/LoginScreen/initial.html">initial</a> Empty login form, shown when the user logs out.</li>
+                <li><a href="Pages/LoginScreen/account_deleted.html">account_deleted</a> Empty login form with a notice, shown after deleting the account.</li>
+                <li><a href="Pages/LoginScreen/invalid_credentials.html">invalid_credentials</a> Empty login form with an error, shown after submitting wrong credentials.</li>
+                <li><a href="Pages/LoginScreen/required_fields.html">required_fields</a> Empty login form with an error, shown after submitting with an empty field.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ForgotPassword</h2>
+            <p>Request of a password reset link.</p>
+            <ul>
+                <li><a href="Pages/ForgotPassword/initial.html">initial</a> Empty reset form, shown after choosing forgot password.</li>
+                <li><a href="Pages/ForgotPassword/email_sent.html">email_sent</a> Empty reset form with a confirmation, shown after submitting a valid email.</li>
+                <li><a href="Pages/ForgotPassword/invalid_email.html">invalid_email</a> Empty reset form with an error, shown after submitting an empty or badly formatted email.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>CreateAccount</h2>
+            <p>Registration of a new user.</p>
+            <ul>
+                <li><a href="Pages/CreateAccount/initial.html">initial</a> Empty registration form, shown after choosing to create an account.</li>
+                <li><a href="Pages/CreateAccount/email_already_exists.html">email_already_exists</a> Empty registration form with an error, shown after submitting with user@example.com.</li>
+                <li><a href="Pages/CreateAccount/invalid_email.html">invalid_email</a> Empty registration form with an error, shown after submitting with a badly formatted email.</li>
+                <li><a href="Pages/CreateAccount/password_mismatch.html">password_mismatch</a> Empty registration form with an error, shown after submitting with a different confirmation.</li>
+                <li><a href="Pages/CreateAccount/password_too_short.html">password_too_short</a> Empty registration form with an error, shown after submitting with a short password.</li>
+                <li><a href="Pages/CreateAccount/required_fields.html">required_fields</a> Empty registration form with an error, shown after submitting with an empty field.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>OnboardingWorkspace</h2>
+            <p>First setup step: naming the workspace.</p>
+            <ul>
+                <li><a href="Pages/OnboardingWorkspace/initial.html">initial</a> Empty workspace form, shown after creating an account.</li>
+                <li><a href="Pages/OnboardingWorkspace/name_required.html">name_required</a> Empty workspace form with an error, shown after submitting without a name.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>OnboardingInvite</h2>
+            <p>Second setup step: inviting the team.</p>
+            <ul>
+                <li><a href="Pages/OnboardingInvite/initial.html">initial</a> Empty invitation form, shown after naming the workspace.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>OnboardingProject</h2>
+            <p>Last setup step: choosing how to start.</p>
+            <ul>
+                <li><a href="Pages/OnboardingProject/initial.html">initial</a> Template choice with the blank project selected, shown after the invitation step.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Home</h2>
+            <p>Overview of the authenticated user's work.</p>
+            <ul>
+                <li><a href="Pages/Home/initial.html">initial</a> Overview of the fixed user user@example.com, shown after logging in.</li>
+                <li><a href="Pages/Home/welcome.html">welcome</a> Overview of the fixed user with a welcome banner, shown after finishing the setup.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tasks</h2>
+            <p>List of the user's tasks.</p>
+            <ul>
+                <li><a href="Pages/Tasks/initial.html">initial</a> All tasks, shown after choosing tasks in the menu.</li>
+                <li><a href="Pages/Tasks/checkout_bug_deleted.html">checkout_bug_deleted</a> All tasks except "Fix checkout bug", shown after deleting it.</li>
+                <li><a href="Pages/Tasks/done.html">done</a> Completed tasks, shown after choosing the done tab.</li>
+                <li><a href="Pages/Tasks/no_results.html">no_results</a> Empty list, shown after a search without the word release.</li>
+                <li><a href="Pages/Tasks/open.html">open</a> Open tasks, shown after choosing the open tab.</li>
+                <li><a href="Pages/Tasks/privacy_policy_deleted.html">privacy_policy_deleted</a> All tasks except "Update privacy policy", shown after deleting it.</li>
+                <li><a href="Pages/Tasks/release_notes_deleted.html">release_notes_deleted</a> All tasks except "Write release notes", shown after deleting it.</li>
+                <li><a href="Pages/Tasks/search_results.html">search_results</a> Tasks matching release, shown after a search that contains that word.</li>
+                <li><a href="Pages/Tasks/task_created.html">task_created</a> All tasks plus a fixed new row without a link, shown after creating a task with any title.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>NewTask</h2>
+            <p>Creation of a task.</p>
+            <ul>
+                <li><a href="Pages/NewTask/initial.html">initial</a> Empty task form, shown after choosing new task.</li>
+                <li><a href="Pages/NewTask/title_required.html">title_required</a> Empty task form with an error, shown after submitting without a title.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>TaskCheckoutBug</h2>
+            <p>Details of the task "Fix checkout bug".</p>
+            <ul>
+                <li><a href="Pages/TaskCheckoutBug/initial.html">initial</a> Details of the open task, shown after opening it from a list.</li>
+                <li><a href="Pages/TaskCheckoutBug/completed.html">completed</a> Details of the task as done, shown after choosing mark as done.</li>
+                <li><a href="Pages/TaskCheckoutBug/delete_confirm.html">delete_confirm</a> The task behind a confirmation modal, shown after choosing delete.</li>
+                <li><a href="Pages/TaskCheckoutBug/saved.html">saved</a> Unchanged task details with a confirmation, shown after saving the edit form.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>TaskCheckoutBugEdit</h2>
+            <p>Edition of the task "Fix checkout bug".</p>
+            <ul>
+                <li><a href="Pages/TaskCheckoutBugEdit/initial.html">initial</a> Form filled with the task's fixed values, shown after choosing edit.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>TaskPrivacyPolicy</h2>
+            <p>Details of the task "Update privacy policy".</p>
+            <ul>
+                <li><a href="Pages/TaskPrivacyPolicy/initial.html">initial</a> Details of the done task, shown after opening it from a list.</li>
+                <li><a href="Pages/TaskPrivacyPolicy/delete_confirm.html">delete_confirm</a> The task behind a confirmation modal, shown after choosing delete.</li>
+                <li><a href="Pages/TaskPrivacyPolicy/reopened.html">reopened</a> Details of the task as open, shown after choosing reopen.</li>
+                <li><a href="Pages/TaskPrivacyPolicy/saved.html">saved</a> Unchanged task details with a confirmation, shown after saving the edit form.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>TaskPrivacyPolicyEdit</h2>
+            <p>Edition of the task "Update privacy policy".</p>
+            <ul>
+                <li><a href="Pages/TaskPrivacyPolicyEdit/initial.html">initial</a> Form filled with the task's fixed values, shown after choosing edit.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>TaskReleaseNotes</h2>
+            <p>Details of the task "Write release notes".</p>
+            <ul>
+                <li><a href="Pages/TaskReleaseNotes/initial.html">initial</a> Details of the open task, shown after opening it from a list.</li>
+                <li><a href="Pages/TaskReleaseNotes/completed.html">completed</a> Details of the task as done, shown after choosing mark as done.</li>
+                <li><a href="Pages/TaskReleaseNotes/delete_confirm.html">delete_confirm</a> The task behind a confirmation modal, shown after choosing delete.</li>
+                <li><a href="Pages/TaskReleaseNotes/saved.html">saved</a> Unchanged task details with a confirmation, shown after saving the edit form.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>TaskReleaseNotesEdit</h2>
+            <p>Edition of the task "Write release notes".</p>
+            <ul>
+                <li><a href="Pages/TaskReleaseNotesEdit/initial.html">initial</a> Form filled with the task's fixed values, shown after choosing edit.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <p>List of the user's projects.</p>
+            <ul>
+                <li><a href="Pages/Projects/initial.html">initial</a> All projects, shown after choosing projects in the menu.</li>
+                <li><a href="Pages/Projects/name_required.html">name_required</a> All projects behind the form modal with an error, shown after submitting without a name.</li>
+                <li><a href="Pages/Projects/new_project.html">new_project</a> All projects behind a form modal, shown after choosing new project.</li>
+                <li><a href="Pages/Projects/project_created.html">project_created</a> All projects plus a fixed new card without a link, shown after creating a project with any name.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ProjectWebsite</h2>
+            <p>Details of the project "Website relaunch".</p>
+            <ul>
+                <li><a href="Pages/ProjectWebsite/initial.html">initial</a> The project's progress and tasks, shown after opening it.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ProjectMobile</h2>
+            <p>Details of the project "Mobile app".</p>
+            <ul>
+                <li><a href="Pages/ProjectMobile/initial.html">initial</a> The project's progress and tasks, shown after opening it.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>SettingsProfile</h2>
+            <p>Edition of the user's profile.</p>
+            <ul>
+                <li><a href="Pages/SettingsProfile/initial.html">initial</a> Form filled with the user's fixed profile, shown after choosing settings or the profile tab.</li>
+                <li><a href="Pages/SettingsProfile/saved.html">saved</a> Unchanged profile with a confirmation, shown after saving.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>SettingsNotifications</h2>
+            <p>Choice of which emails the user receives.</p>
+            <ul>
+                <li><a href="Pages/SettingsNotifications/initial.html">initial</a> Checkboxes with their fixed defaults, shown after choosing the notifications tab.</li>
+                <li><a href="Pages/SettingsNotifications/saved.html">saved</a> Checkboxes back to their fixed defaults with a confirmation, shown after saving.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>SettingsSecurity</h2>
+            <p>Change of password and deletion of the account.</p>
+            <ul>
+                <li><a href="Pages/SettingsSecurity/initial.html">initial</a> Empty password form and the delete option, shown after choosing the security tab.</li>
+                <li><a href="Pages/SettingsSecurity/delete_account.html">delete_account</a> The security tab behind a confirmation modal, shown after choosing delete account.</li>
+                <li><a href="Pages/SettingsSecurity/password_changed.html">password_changed</a> Empty password form with a confirmation, shown after a valid change.</li>
+                <li><a href="Pages/SettingsSecurity/password_mismatch.html">password_mismatch</a> Empty password form with an error, shown after submitting a different confirmation.</li>
+                <li><a href="Pages/SettingsSecurity/password_too_short.html">password_too_short</a> Empty password form with an error, shown after submitting a short password.</li>
+            </ul>
+        </section>
+    </main>
 </body>
 
 </html>
