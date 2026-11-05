@@ -129,6 +129,18 @@ The example app loads the stylesheet by relative path, `Lib/test-hub.css`, as ex
 
 In the repository's Settings → Pages, choose **Deploy from a branch**, with the default branch and `/ (root)`. The site is served from `https://<owner>.github.io/<repository>/`, and every push to that branch publishes it.
 
+## Skill
+
+The `lethe` skill teaches [Claude Code](https://claude.com/claude-code) this standard, so it can build and change a prototype by these rules and check the result with a script, which needs Python 3. To install it, run this at the root of your project:
+
+```bash
+mkdir -p .claude/skills && curl -fsSL https://github.com/MateusMoutinhoOrg/Lethe/archive/refs/heads/main.tar.gz | tar -xz -C .claude/skills --strip-components=3 Lethe-main/.claude/skills/lethe
+```
+
+It copies `.claude/skills/lethe/` from this repository to your project, and running it again updates the skill. Then ask Claude Code for a prototype, or type `/lethe`.
+
+The skill works without this repository, so it holds its own copy of the rules and of `Assets/js/app.js`. A change to them here is also made in `.claude/skills/lethe/`.
+
 ## Example
 
 `Pages/` holds Worklist, a small task manager with 60 states in 21 pages. Open `index.html` in a browser, or the [published site](https://mateusmoutinhoorg.github.io/Lethe/), to see the Test Hub. To run the app, start at `LoginScreen/initial` and log in with `user@example.com` and `password123`.
