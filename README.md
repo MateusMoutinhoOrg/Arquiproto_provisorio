@@ -78,7 +78,13 @@ The script adds one `?` button per template. The popup closes with its × button
 
 Don't load the files from `raw.githubusercontent.com`, because browsers block a script served as `text/plain`.
 
-Without a connection the `?` buttons don't appear and the state keeps working. To keep them offline, copy `Lib/` to the project's root and load the files by relative path, as the example app does:
+Without a connection the `?` buttons don't appear and the state keeps working. To keep them offline, run this at the root of your project:
+
+```bash
+curl -fsSL https://github.com/MateusMoutinhoOrg/Lethe/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1 Lethe-main/Lib
+```
+
+It copies `Lib/` from this repository to your project, and running it again updates the libraries. Then load the files by relative path, as the example app does:
 
 ```html
 <link rel="stylesheet" href="../../Lib/info-popup.css">

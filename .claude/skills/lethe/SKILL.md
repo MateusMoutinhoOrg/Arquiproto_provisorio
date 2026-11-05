@@ -115,7 +115,13 @@ Put a `<template data-info-popup>` right after the component, with the popup's t
 
 Don't load the files from `raw.githubusercontent.com`, because browsers block a script served as `text/plain`.
 
-Without a connection the `?` buttons don't appear and the state keeps working. To keep them offline, download `info-popup.css` and `info-popup.js` to `Lib/` at the project's root, and load them by relative path from each state, `../../Lib/info-popup.css` and `../../Lib/info-popup.js`.
+Without a connection the `?` buttons don't appear and the state keeps working. To keep them offline, run this at the project's root, which copies `Lib/` from the Lethe repository and, run again, updates it:
+
+```bash
+curl -fsSL https://github.com/MateusMoutinhoOrg/Lethe/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1 Lethe-main/Lib
+```
+
+Then load the files by relative path from each state, `../../Lib/info-popup.css` and `../../Lib/info-popup.js`.
 
 ## Test Hub
 
