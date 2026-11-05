@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SettingsNotifications/initial</title>
+    <link rel="stylesheet" href="../../Assets/css/app.css">
+    <link rel="stylesheet" href="../../Assets/css/info-popup.css">
+    <script src="../../Assets/js/info-popup.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+            <nav class="nav">
+                <a class="nav-link nav-home" href="../Home/initial.html">Home</a>
+                <template data-info-popup><p>→ Home/initial</p></template>
+                <a class="nav-link nav-tasks" href="../Tasks/initial.html">Tasks</a>
+                <template data-info-popup><p>→ Tasks/initial</p></template>
+                <a class="nav-link nav-projects" href="../Projects/initial.html">Projects</a>
+                <template data-info-popup><p>→ Projects/initial</p></template>
+                <a class="nav-link nav-settings" href="../SettingsProfile/initial.html" aria-current="page">Settings</a>
+                <template data-info-popup><p>→ SettingsProfile/initial</p></template>
+            </nav>
+            <div class="sidebar-user">
+                <span class="avatar">ST</span>
+                <span class="sidebar-user-text"><strong>Sam Taylor</strong><small>user@example.com</small></span>
+            </div>
+            <a class="nav-link nav-logout" href="../LoginScreen/initial.html">Log out</a>
+            <template data-info-popup><p>→ LoginScreen/initial</p></template>
+        </aside>
+
+        <main class="main">
+            <div class="page-head">
+                <div>
+                    <h1>Settings</h1>
+                    <template data-info-popup>
+                        <p>Choice of which emails the user receives.</p>
+                        <p>Checkboxes with their fixed defaults, shown after choosing the notifications tab.</p>
+                    </template>
+                    <p class="muted">Manage your account and preferences.</p>
+                </div>
+            </div>
+
+            <nav class="tabs page-tabs" aria-label="Settings sections">
+                <a class="tab" href="../SettingsProfile/initial.html">Profile</a>
+                <template data-info-popup><p>→ SettingsProfile/initial</p></template>
+                <a class="tab" href="../SettingsNotifications/initial.html" aria-current="page">Notifications</a>
+                <template data-info-popup><p>→ SettingsNotifications/initial</p></template>
+                <a class="tab" href="../SettingsSecurity/initial.html">Security</a>
+                <template data-info-popup><p>→ SettingsSecurity/initial</p></template>
+            </nav>
+
+            <form id="notifications" class="card form form-card" novalidate autocomplete="off">
+                <fieldset>
+                    <legend>Email me about</legend>
+                    <label class="check">
+                        <input type="checkbox" name="assigned" checked>
+                        <span><strong>Task assigned</strong><span class="muted small">When someone assigns a task to you.</span></span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="reminders" checked>
+                        <span><strong>Due date reminders</strong><span class="muted small">The day before a task is due.</span></span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="summary">
+                        <span><strong>Weekly summary</strong><span class="muted small">Every Monday, what's done and what's next.</span></span>
+                    </label>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button class="btn btn-primary">Save preferences</button>
+                    <template data-info-popup><p>→ SettingsNotifications/saved</p></template>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="../../Assets/js/app.js"></script>
+    <script src="../../Assets/js/SettingsNotifications.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnboardingWorkspace/initial</title>
+    <link rel="stylesheet" href="../../Assets/css/app.css">
+    <link rel="stylesheet" href="../../Assets/css/info-popup.css">
+    <script src="../../Assets/js/info-popup.js"></script>
+</head>
+
+<body>
+    <main class="auth">
+        <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+
+        <div class="card auth-card">
+            <ol class="steps">
+                <li class="step" aria-current="step">Workspace</li>
+                <li class="step">Team</li>
+                <li class="step">First project</li>
+            </ol>
+
+            <div>
+                <h1>Name your workspace</h1>
+                <template data-info-popup>
+                    <p>First setup step: naming the workspace.</p>
+                    <p>Empty workspace form, shown after creating an account.</p>
+                </template>
+                <p class="muted">This is where your team's projects will live.</p>
+            </div>
+
+            <form id="workspace-form" class="form" novalidate autocomplete="off">
+                <div class="field">
+                    <label for="workspace">Workspace name</label>
+                    <input id="workspace" name="workspace" type="text" placeholder="Acme Inc.">
+                </div>
+
+                <button class="btn btn-primary btn-block">Continue</button>
+                <template data-info-popup>
+                    <ul>
+                        <li>if workspace name is empty → OnboardingWorkspace/name_required</li>
+                        <li>else → OnboardingInvite/initial</li>
+                    </ul>
+                </template>
+            </form>
+        </div>
+
+        <p class="auth-foot"><a href="../Home/initial.html">Skip setup</a><template data-info-popup><p>→ Home/initial</p></template></p>
+    </main>
+
+    <script src="../../Assets/js/app.js"></script>
+    <script src="../../Assets/js/OnboardingWorkspace.js"></script>
+</body>
+
+</html>

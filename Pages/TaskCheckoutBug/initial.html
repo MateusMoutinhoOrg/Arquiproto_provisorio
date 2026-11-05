@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskCheckoutBug/initial</title>
+    <link rel="stylesheet" href="../../Assets/css/app.css">
+    <link rel="stylesheet" href="../../Assets/css/info-popup.css">
+    <script src="../../Assets/js/info-popup.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+            <nav class="nav">
+                <a class="nav-link nav-home" href="../Home/initial.html">Home</a>
+                <template data-info-popup><p>→ Home/initial</p></template>
+                <a class="nav-link nav-tasks" href="../Tasks/initial.html" aria-current="page">Tasks</a>
+                <template data-info-popup><p>→ Tasks/initial</p></template>
+                <a class="nav-link nav-projects" href="../Projects/initial.html">Projects</a>
+                <template data-info-popup><p>→ Projects/initial</p></template>
+                <a class="nav-link nav-settings" href="../SettingsProfile/initial.html">Settings</a>
+                <template data-info-popup><p>→ SettingsProfile/initial</p></template>
+            </nav>
+            <div class="sidebar-user">
+                <span class="avatar">ST</span>
+                <span class="sidebar-user-text"><strong>Sam Taylor</strong><small>user@example.com</small></span>
+            </div>
+            <a class="nav-link nav-logout" href="../LoginScreen/initial.html">Log out</a>
+            <template data-info-popup><p>→ LoginScreen/initial</p></template>
+        </aside>
+
+        <main class="main">
+            <a class="back-link" href="../Tasks/initial.html">All tasks</a>
+            <template data-info-popup><p>→ Tasks/initial</p></template>
+
+            <div class="page-head">
+                <div>
+                    <h1>Fix checkout bug</h1>
+                    <template data-info-popup>
+                        <p>Details of the task "Fix checkout bug".</p>
+                        <p>Details of the open task, shown after opening it from a list.</p>
+                    </template>
+                    <p class="muted"><a href="../ProjectMobile/initial.html">Mobile app</a><template data-info-popup><p>→ ProjectMobile/initial</p></template></p>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-primary" href="../TaskCheckoutBug/completed.html">Mark as done</a>
+                    <template data-info-popup><p>→ TaskCheckoutBug/completed</p></template>
+                    <a class="btn" href="../TaskCheckoutBugEdit/initial.html">Edit</a>
+                    <template data-info-popup><p>→ TaskCheckoutBugEdit/initial</p></template>
+                    <a class="btn btn-danger-outline" href="../TaskCheckoutBug/delete_confirm.html">Delete</a>
+                    <template data-info-popup><p>→ TaskCheckoutBug/delete_confirm</p></template>
+                </div>
+            </div>
+
+            <div class="detail-grid">
+                <section class="card">
+                    <h2>Description</h2>
+                    <p>The pay button stays disabled after a coupon is removed from the cart.</p>
+                </section>
+                <aside class="card">
+                    <dl class="meta">
+                        <div><dt>Status</dt><dd><span class="badge badge-open">Open</span></dd></div>
+                        <div><dt>Priority</dt><dd><span class="badge badge-high">High</span></dd></div>
+                        <div><dt>Due date</dt><dd>Nov 3 (overdue)</dd></div>
+                        <div><dt>Assignee</dt><dd>Sam Taylor</dd></div>
+                    </dl>
+                </aside>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

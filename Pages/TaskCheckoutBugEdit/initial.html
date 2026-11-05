@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskCheckoutBugEdit/initial</title>
+    <link rel="stylesheet" href="../../Assets/css/app.css">
+    <link rel="stylesheet" href="../../Assets/css/info-popup.css">
+    <script src="../../Assets/js/info-popup.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+            <nav class="nav">
+                <a class="nav-link nav-home" href="../Home/initial.html">Home</a>
+                <template data-info-popup><p>→ Home/initial</p></template>
+                <a class="nav-link nav-tasks" href="../Tasks/initial.html" aria-current="page">Tasks</a>
+                <template data-info-popup><p>→ Tasks/initial</p></template>
+                <a class="nav-link nav-projects" href="../Projects/initial.html">Projects</a>
+                <template data-info-popup><p>→ Projects/initial</p></template>
+                <a class="nav-link nav-settings" href="../SettingsProfile/initial.html">Settings</a>
+                <template data-info-popup><p>→ SettingsProfile/initial</p></template>
+            </nav>
+            <div class="sidebar-user">
+                <span class="avatar">ST</span>
+                <span class="sidebar-user-text"><strong>Sam Taylor</strong><small>user@example.com</small></span>
+            </div>
+            <a class="nav-link nav-logout" href="../LoginScreen/initial.html">Log out</a>
+            <template data-info-popup><p>→ LoginScreen/initial</p></template>
+        </aside>
+
+        <main class="main">
+            <a class="back-link" href="../TaskCheckoutBug/initial.html">Back to task</a>
+            <template data-info-popup><p>→ TaskCheckoutBug/initial</p></template>
+
+            <div class="page-head">
+                <div>
+                    <h1>Edit task</h1>
+                    <template data-info-popup>
+                        <p>Edition of the task "Fix checkout bug".</p>
+                        <p>Form filled with the task's fixed values, shown after choosing edit.</p>
+                    </template>
+                </div>
+            </div>
+
+            <form id="edit" class="card form form-card" novalidate autocomplete="off">
+                <div class="field">
+                    <label for="title">Title</label>
+                    <input id="title" name="title" type="text" value="Fix checkout bug" placeholder="What needs to be done?">
+                </div>
+
+                <div class="field">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description">The pay button stays disabled after a coupon is removed from the cart.</textarea>
+                </div>
+
+                <div class="field-row">
+                    <div class="field">
+                        <label for="project">Project</label>
+                        <select id="project" name="project">
+                            <option>Website relaunch</option>
+                            <option selected>Mobile app</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="priority">Priority</label>
+                        <select id="priority" name="priority">
+                            <option selected>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="due">Due date</label>
+                    <input id="due" name="due" type="date" value="2026-11-03">
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-primary">Save changes</button>
+                    <template data-info-popup><p>→ TaskCheckoutBug/saved</p></template>
+                    <a class="btn" href="../TaskCheckoutBug/initial.html">Cancel</a>
+                    <template data-info-popup><p>→ TaskCheckoutBug/initial</p></template>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="../../Assets/js/app.js"></script>
+    <script src="../../Assets/js/TaskCheckoutBugEdit.js"></script>
+</body>
+
+</html>

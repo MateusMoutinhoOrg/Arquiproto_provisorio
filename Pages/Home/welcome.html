@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home/welcome</title>
+    <link rel="stylesheet" href="../../Assets/css/app.css">
+    <link rel="stylesheet" href="../../Assets/css/info-popup.css">
+    <script src="../../Assets/js/info-popup.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+            <nav class="nav">
+                <a class="nav-link nav-home" href="../Home/initial.html" aria-current="page">Home</a>
+                <template data-info-popup><p>→ Home/initial</p></template>
+                <a class="nav-link nav-tasks" href="../Tasks/initial.html">Tasks</a>
+                <template data-info-popup><p>→ Tasks/initial</p></template>
+                <a class="nav-link nav-projects" href="../Projects/initial.html">Projects</a>
+                <template data-info-popup><p>→ Projects/initial</p></template>
+                <a class="nav-link nav-settings" href="../SettingsProfile/initial.html">Settings</a>
+                <template data-info-popup><p>→ SettingsProfile/initial</p></template>
+            </nav>
+            <div class="sidebar-user">
+                <span class="avatar">ST</span>
+                <span class="sidebar-user-text"><strong>Sam Taylor</strong><small>user@example.com</small></span>
+            </div>
+            <a class="nav-link nav-logout" href="../LoginScreen/initial.html">Log out</a>
+            <template data-info-popup><p>→ LoginScreen/initial</p></template>
+        </aside>
+
+        <main class="main">
+            <div class="page-head">
+                <div>
+                    <h1>Hello, Sam</h1>
+                    <template data-info-popup>
+                        <p>Overview of the authenticated user's work.</p>
+                        <p>Overview of the fixed user with a welcome banner, shown after finishing the setup.</p>
+                    </template>
+                    <p class="muted">Here's what needs your attention today.</p>
+                </div>
+                <a class="btn btn-primary" href="../NewTask/initial.html">New task</a>
+                <template data-info-popup><p>→ NewTask/initial</p></template>
+            </div>
+
+            <div class="alert alert-success" role="status">
+                <span>Your workspace is ready. Welcome to Worklist!</span>
+                <a href="../Home/initial.html">Dismiss</a>
+                <template data-info-popup><p>→ Home/initial</p></template>
+            </div>
+
+            <div class="stats">
+                <a class="card stat" href="../Tasks/open.html"><span class="stat-value">2</span><span class="stat-label">Open tasks</span></a>
+                <template data-info-popup><p>→ Tasks/open</p></template>
+                <a class="card stat" href="../Tasks/done.html"><span class="stat-value">1</span><span class="stat-label">Completed</span></a>
+                <template data-info-popup><p>→ Tasks/done</p></template>
+                <a class="card stat" href="../Projects/initial.html"><span class="stat-value">2</span><span class="stat-label">Projects</span></a>
+                <template data-info-popup><p>→ Projects/initial</p></template>
+            </div>
+
+            <div class="columns">
+                <section>
+                    <h2 class="section-title">Needs attention</h2>
+                    <div class="list">
+                        <a class="task-row" href="../TaskCheckoutBug/initial.html">
+                            <span class="status status-open" role="img" aria-label="Open"></span>
+                            <span class="task-main">
+                                <span class="task-title">Fix checkout bug</span>
+                                <span class="task-meta">Mobile app · High priority · Nov 3</span>
+                            </span>
+                            <span class="badge badge-overdue">Overdue</span>
+                        </a>
+                        <template data-info-popup><p>→ TaskCheckoutBug/initial</p></template>
+                        <a class="task-row" href="../TaskReleaseNotes/initial.html">
+                            <span class="status status-open" role="img" aria-label="Open"></span>
+                            <span class="task-main">
+                                <span class="task-title">Write release notes</span>
+                                <span class="task-meta">Website relaunch · Medium priority · Nov 5</span>
+                            </span>
+                            <span class="badge badge-today">Today</span>
+                        </a>
+                        <template data-info-popup><p>→ TaskReleaseNotes/initial</p></template>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="section-title">Projects</h2>
+                    <div class="list">
+                        <a class="project-row" href="../ProjectWebsite/initial.html">
+                            <span class="project-head"><strong>Website relaunch</strong><span class="muted small">1 of 2 done</span></span>
+                            <progress class="progress" value="1" max="2" aria-label="Website relaunch progress"></progress>
+                        </a>
+                        <template data-info-popup><p>→ ProjectWebsite/initial</p></template>
+                        <a class="project-row" href="../ProjectMobile/initial.html">
+                            <span class="project-head"><strong>Mobile app</strong><span class="muted small">0 of 1 done</span></span>
+                            <progress class="progress" value="0" max="1" aria-label="Mobile app progress"></progress>
+                        </a>
+                        <template data-info-popup><p>→ ProjectMobile/initial</p></template>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

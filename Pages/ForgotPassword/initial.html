@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgotPassword/initial</title>
+    <link rel="stylesheet" href="../../Assets/css/app.css">
+    <link rel="stylesheet" href="../../Assets/css/info-popup.css">
+    <script src="../../Assets/js/info-popup.js"></script>
+</head>
+
+<body>
+    <main class="auth">
+        <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+
+        <div class="card auth-card">
+            <h1>Reset your password</h1>
+            <template data-info-popup>
+                <p>Request of a password reset link.</p>
+                <p>Empty reset form, shown after choosing forgot password.</p>
+            </template>
+            <p class="muted">We'll email you a link to choose a new one.</p>
+
+            <form id="forgot" class="form" novalidate autocomplete="off">
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email">
+                </div>
+
+                <button class="btn btn-primary btn-block">Send reset link</button>
+                <template data-info-popup>
+                    <ul>
+                        <li>if email format is invalid → ForgotPassword/invalid_email</li>
+                        <li>else → ForgotPassword/email_sent</li>
+                    </ul>
+                </template>
+            </form>
+        </div>
+
+        <p class="auth-foot"><a href="../LoginScreen/initial.html">Back to login</a><template data-info-popup><p>→ LoginScreen/initial</p></template></p>
+    </main>
+
+    <script src="../../Assets/js/app.js"></script>
+    <script src="../../Assets/js/ForgotPassword.js"></script>
+</body>
+
+</html>

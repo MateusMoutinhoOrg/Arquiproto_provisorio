@@ -1,0 +1,125 @@
+/* Info Popup: the "?" button and its popup. Stands alone: it uses nothing from other stylesheets. */
+
+/* The wrapper around a component that fills a box of its own. */
+
+.info-popup-host {
+    display: flex;
+}
+
+/* :where() keeps these rules easy to override from a project's own stylesheet. */
+
+:where(.info-popup-host) > * {
+    flex: 1 1 auto;
+}
+
+:where(.info-popup-host) > :where(h1, h2, h3, h4, h5, h6) {
+    flex: 0 1 auto;
+}
+
+/* Button */
+
+.info-popup-button {
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex: none;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #15803d;
+    color: #fff;
+    font: 700 12px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.info-popup-button:hover {
+    background: #166534;
+}
+
+/* The white ring keeps the outline visible on any background. */
+
+.info-popup-button:focus-visible,
+.info-popup-close:focus-visible {
+    outline: 2px solid #15803d;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff;
+}
+
+/* Popup */
+
+.info-popup {
+    box-sizing: border-box;
+    width: min(420px, calc(100vw - 32px));
+    max-height: calc(100vh - 32px);
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    overflow: auto;
+    background: #fff;
+    box-shadow: 0 16px 48px rgba(15, 25, 21, .25);
+    color: #1d2522;
+    font: 400 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-align: left;
+}
+
+.info-popup::backdrop {
+    background: rgba(15, 25, 21, .4);
+}
+
+.info-popup-box {
+    position: relative;
+    padding: 18px 44px 18px 20px;
+}
+
+.info-popup-close {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #56625d;
+    font: 400 20px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+
+.info-popup-close:hover {
+    background: #eef0ec;
+    color: #1d2522;
+}
+
+.info-popup-content {
+    overflow-wrap: anywhere;
+}
+
+.info-popup-content p,
+.info-popup-content ul {
+    margin: 0;
+}
+
+.info-popup-content p + p {
+    margin-top: 8px;
+}
+
+.info-popup-content ul {
+    padding-left: 18px;
+}
+
+.info-popup-content li + li {
+    margin-top: 4px;
+}

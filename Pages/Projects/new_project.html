@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects/new_project</title>
+    <link rel="stylesheet" href="../../Assets/css/app.css">
+    <link rel="stylesheet" href="../../Assets/css/info-popup.css">
+    <script src="../../Assets/js/info-popup.js"></script>
+</head>
+
+<body>
+    <div class="app" inert>
+        <aside class="sidebar">
+            <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+            <nav class="nav">
+                <a class="nav-link nav-home" href="../Home/initial.html">Home</a>
+                <template data-info-popup><p>→ Home/initial</p></template>
+                <a class="nav-link nav-tasks" href="../Tasks/initial.html">Tasks</a>
+                <template data-info-popup><p>→ Tasks/initial</p></template>
+                <a class="nav-link nav-projects" href="../Projects/initial.html" aria-current="page">Projects</a>
+                <template data-info-popup><p>→ Projects/initial</p></template>
+                <a class="nav-link nav-settings" href="../SettingsProfile/initial.html">Settings</a>
+                <template data-info-popup><p>→ SettingsProfile/initial</p></template>
+            </nav>
+            <div class="sidebar-user">
+                <span class="avatar">ST</span>
+                <span class="sidebar-user-text"><strong>Sam Taylor</strong><small>user@example.com</small></span>
+            </div>
+            <a class="nav-link nav-logout" href="../LoginScreen/initial.html">Log out</a>
+            <template data-info-popup><p>→ LoginScreen/initial</p></template>
+        </aside>
+
+        <main class="main">
+            <div class="page-head">
+                <div>
+                    <h1>Projects</h1>
+                    <template data-info-popup>
+                        <p>List of the user's projects.</p>
+                        <p>All projects behind a form modal, shown after choosing new project.</p>
+                    </template>
+                    <p class="muted">Group related tasks and follow their progress.</p>
+                </div>
+                <a class="btn btn-primary" href="../Projects/new_project.html">New project</a>
+                <template data-info-popup><p>→ Projects/new_project</p></template>
+            </div>
+
+            <div class="project-grid">
+                <a class="card project-card" href="../ProjectWebsite/initial.html">
+                    <div class="project-head"><h2>Website relaunch</h2><span class="muted small">1 of 2 done</span></div>
+                    <p>New marketing site and legal pages.</p>
+                    <progress class="progress" value="1" max="2" aria-label="Website relaunch progress"></progress>
+                </a>
+                <template data-info-popup><p>→ ProjectWebsite/initial</p></template>
+                <a class="card project-card" href="../ProjectMobile/initial.html">
+                    <div class="project-head"><h2>Mobile app</h2><span class="muted small">0 of 1 done</span></div>
+                    <p>Fixes and polish for the next store release.</p>
+                    <progress class="progress" value="0" max="1" aria-label="Mobile app progress"></progress>
+                </a>
+                <template data-info-popup><p>→ ProjectMobile/initial</p></template>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <h2 id="modal-title">New project</h2>
+            <template data-info-popup>
+                <p>List of the user's projects.</p>
+                <p>All projects behind a form modal, shown after choosing new project.</p>
+            </template>
+            <form id="project" class="form" novalidate autocomplete="off">
+                <div class="field">
+                    <label for="name">Project name</label>
+                    <input id="name" name="name" type="text">
+                </div>
+
+                <div class="form-actions form-actions-end">
+                    <a class="btn" href="../Projects/initial.html">Cancel</a>
+                    <template data-info-popup><p>→ Projects/initial</p></template>
+                    <button class="btn btn-primary">Create project</button>
+                    <template data-info-popup>
+                        <ul>
+                            <li>if project name is empty → Projects/name_required</li>
+                            <li>else → Projects/project_created</li>
+                        </ul>
+                    </template>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../Assets/js/app.js"></script>
+    <script src="../../Assets/js/Projects.js"></script>
+</body>
+
+</html>

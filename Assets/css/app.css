@@ -346,6 +346,11 @@ a:hover {
     overflow: hidden;
 }
 
+/* Between a list's visible children, because a row followed by a <template> is never :last-child. */
+.list > :not(template) ~ :not(template) {
+    border-top: 1px solid var(--line);
+}
+
 .stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -400,13 +405,8 @@ a:hover {
     align-items: center;
     gap: 12px;
     padding: 14px 16px;
-    border-bottom: 1px solid var(--line);
     color: inherit;
     text-decoration: none;
-}
-
-.task-row:last-child {
-    border-bottom: 0;
 }
 
 a.task-row:hover {
@@ -464,13 +464,8 @@ a.task-row:hover {
     display: grid;
     gap: 8px;
     padding: 14px 16px;
-    border-bottom: 1px solid var(--line);
     color: inherit;
     text-decoration: none;
-}
-
-.project-row:last-child {
-    border-bottom: 0;
 }
 
 .project-row:hover {
@@ -865,6 +860,7 @@ legend {
 }
 
 .auth-link {
+    flex: 0 1 auto;
     font-size: .875rem;
     font-weight: 500;
 }
@@ -943,6 +939,7 @@ legend {
     }
 
     .sidebar .brand {
+        margin-right: auto;
         padding: 0;
     }
 
@@ -965,11 +962,6 @@ legend {
     .nav-link::before {
         width: 16px;
         height: 16px;
-    }
-
-    .nav-logout {
-        order: 2;
-        margin-left: auto;
     }
 
     .sidebar-user {
@@ -1001,6 +993,11 @@ legend {
 
     .stat-label {
         font-size: .8rem;
+    }
+
+    /* Three cards share the width, and "Completed" can't wrap. */
+    .stats .info-popup-button {
+        margin: 0 0 0 2px;
     }
 
     .toolbar {

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectWebsite/initial</title>
+    <link rel="stylesheet" href="../../Assets/css/app.css">
+    <link rel="stylesheet" href="../../Assets/css/info-popup.css">
+    <script src="../../Assets/js/info-popup.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+            <nav class="nav">
+                <a class="nav-link nav-home" href="../Home/initial.html">Home</a>
+                <template data-info-popup><p>→ Home/initial</p></template>
+                <a class="nav-link nav-tasks" href="../Tasks/initial.html">Tasks</a>
+                <template data-info-popup><p>→ Tasks/initial</p></template>
+                <a class="nav-link nav-projects" href="../Projects/initial.html" aria-current="page">Projects</a>
+                <template data-info-popup><p>→ Projects/initial</p></template>
+                <a class="nav-link nav-settings" href="../SettingsProfile/initial.html">Settings</a>
+                <template data-info-popup><p>→ SettingsProfile/initial</p></template>
+            </nav>
+            <div class="sidebar-user">
+                <span class="avatar">ST</span>
+                <span class="sidebar-user-text"><strong>Sam Taylor</strong><small>user@example.com</small></span>
+            </div>
+            <a class="nav-link nav-logout" href="../LoginScreen/initial.html">Log out</a>
+            <template data-info-popup><p>→ LoginScreen/initial</p></template>
+        </aside>
+
+        <main class="main">
+            <a class="back-link" href="../Projects/initial.html">All projects</a>
+            <template data-info-popup><p>→ Projects/initial</p></template>
+
+            <div class="page-head">
+                <div>
+                    <h1>Website relaunch</h1>
+                    <template data-info-popup>
+                        <p>Details of the project "Website relaunch".</p>
+                        <p>The project's progress and tasks, shown after opening it.</p>
+                    </template>
+                    <p class="muted">New marketing site and legal pages.</p>
+                </div>
+                <a class="btn btn-primary" href="../NewTask/initial.html">New task</a>
+                <template data-info-popup><p>→ NewTask/initial</p></template>
+            </div>
+
+            <div class="stack">
+                <div class="card progress-card">
+                    <div class="project-head"><h2>Progress</h2><span class="muted small">1 of 2 done</span></div>
+                    <progress class="progress" value="1" max="2" aria-label="Website relaunch progress"></progress>
+                </div>
+
+                <section>
+                    <h2 class="section-title">Tasks</h2>
+                    <div class="list">
+                        <a class="task-row" href="../TaskReleaseNotes/initial.html">
+                            <span class="status status-open" role="img" aria-label="Open"></span>
+                            <span class="task-main">
+                                <span class="task-title">Write release notes</span>
+                                <span class="task-meta">Website relaunch · Medium priority · Nov 5</span>
+                            </span>
+                            <span class="badge badge-today">Today</span>
+                        </a>
+                        <template data-info-popup><p>→ TaskReleaseNotes/initial</p></template>
+                        <a class="task-row is-done" href="../TaskPrivacyPolicy/initial.html">
+                            <span class="status status-done" role="img" aria-label="Done"></span>
+                            <span class="task-main">
+                                <span class="task-title">Update privacy policy</span>
+                                <span class="task-meta">Website relaunch · Low priority · Oct 30</span>
+                            </span>
+                            <span class="badge badge-done">Done</span>
+                        </a>
+                        <template data-info-popup><p>→ TaskPrivacyPolicy/initial</p></template>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnboardingInvite/initial</title>
+    <link rel="stylesheet" href="../../Assets/css/app.css">
+    <link rel="stylesheet" href="../../Assets/css/info-popup.css">
+    <script src="../../Assets/js/info-popup.js"></script>
+</head>
+
+<body>
+    <main class="auth">
+        <div class="brand"><span class="brand-mark">W</span>Worklist</div>
+
+        <div class="card auth-card">
+            <ol class="steps">
+                <li class="step is-done">Workspace</li>
+                <li class="step" aria-current="step">Team</li>
+                <li class="step">First project</li>
+            </ol>
+
+            <div>
+                <h1>Invite your team</h1>
+                <template data-info-popup>
+                    <p>Second setup step: inviting the team.</p>
+                    <p>Empty invitation form, shown after naming the workspace.</p>
+                </template>
+                <p class="muted">Work goes faster together. You can always do this later.</p>
+            </div>
+
+            <form id="invite" class="form" novalidate autocomplete="off">
+                <div class="field">
+                    <label for="emails">Email addresses</label>
+                    <textarea id="emails" name="emails" placeholder="One email per line"></textarea>
+                </div>
+
+                <div class="form-actions form-actions-end">
+                    <a class="btn" href="../OnboardingProject/initial.html">Skip this step</a>
+                    <template data-info-popup><p>→ OnboardingProject/initial</p></template>
+                    <button class="btn btn-primary">Continue</button>
+                    <template data-info-popup><p>→ OnboardingProject/initial</p></template>
+                </div>
+            </form>
+        </div>
+
+        <p class="auth-foot"><a href="../OnboardingWorkspace/initial.html">Back</a><template data-info-popup><p>→ OnboardingWorkspace/initial</p></template></p>
+    </main>
+
+    <script src="../../Assets/js/app.js"></script>
+    <script src="../../Assets/js/OnboardingInvite.js"></script>
+</body>
+
+</html>

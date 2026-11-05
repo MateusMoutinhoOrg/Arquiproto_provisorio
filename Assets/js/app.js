@@ -3,7 +3,7 @@
 // Turns a state's address ("Page/state") into a relative path. Every state lives at the same depth.
 function address(target) {
     var parts = target.split("/");
-    return "../../../" + parts[0] + "/states/" + parts[1] + "/index.html";
+    return "../" + parts[0] + "/" + parts[1] + ".html";
 }
 
 function isEmail(value) {
