@@ -12,9 +12,7 @@ A prototype has no memory, only states. Every action ends in a redirect to a sta
 index.html            default entry of the site, redirects to the first state
 Assets/
   css/app.css         styles of all states
-  css/info-popup.css  styles of the Info Popup
   js/app.js           form behavior of all states
-  js/info-popup.js    behavior of the Info Popup
   js/<Page>.js        form conditions of a page
 Pages/
   <Page>/
@@ -25,28 +23,29 @@ Pages/
 - A state's address is `<Page>/<state>`, for example `LoginScreen/initial`.
 - Pages use `PascalCase` and states use `snake_case`.
 - Every page has an `initial` state.
+- `Lib/` in this repository holds the libraries of the architecture, such as the [Info Popup](#info-popup). A project loads them by URL, so it doesn't need this folder.
 
 ## Rules
 
 1. **A state never changes.** Opening a state always shows the same thing, wherever the user came from.
-2. **Nothing is remembered.** Storage (`localStorage`, `sessionStorage`, IndexedDB, cookies), URL parameters (query string, hash) and requests for data (`fetch`, `XMLHttpRequest`) are forbidden. Loading files from `Assets/` is allowed.
+2. **Nothing is remembered.** Storage (`localStorage`, `sessionStorage`, IndexedDB, cookies), URL parameters (query string, hash) and requests for data (`fetch`, `XMLHttpRequest`) are forbidden. Loading files from `Assets/` and the Info Popup library is allowed.
 3. **Every action ends in a redirect.** An action is a click on a link or button, or a submit; filling a form field (typing, choosing an option, ticking a box) or scrolling is not an action. The target can be another state or the same one, on the same page or another. An action never changes the current screen: an error message, an open modal and a selected tab are other states. Opening or closing an Info Popup is not an action: it documents the prototype and is not part of the screen. A modal of the product is still another state.
 4. **Conditions only read the current screen.** An action can check current input values against fixed values, against each other, or for length or format. Every condition has an `else`, so every path ends in a redirect.
-5. **A state stands alone.** Each `<state>.html` holds its whole screen, including every link, with no framework or build step, and works when opened directly in a browser. The only shared files are in `Assets/`: styles, form behavior and the Info Popup. They never add markup or links to the screen, except for `info-popup.js`, the only shared file that adds markup, limited to the `?` button and the popup, with no links. The Info Popup files can also be loaded from the public URL in [Info Popup](#info-popup). Actions are plain links. Forms use `novalidate`, because browser validation would block the redirect, and `onSubmit` from `Assets/js/app.js`, which sets `location.href`, because a native submit would add `?` to the URL, and resets the form on `pageshow`, because the browser's back button would restore typed values. A page's conditions live in `Assets/js/<Page>.js`, loaded as a classic script, because browsers block modules on `file://`.
+5. **A state stands alone.** Each `<state>.html` holds its whole screen, including every link, with no framework or build step, and works when opened directly in a browser. The only shared files are the styles and form behavior in `Assets/` and the [Info Popup](#info-popup) library. They never add markup or links to the screen, except for `info-popup.js`, the only shared file that adds markup, limited to the `?` button and the popup, with no links. Actions are plain links. Forms use `novalidate`, because browser validation would block the redirect, and `onSubmit` from `Assets/js/app.js`, which sets `location.href`, because a native submit would add `?` to the URL, and resets the form on `pageshow`, because the browser's back button would restore typed values. A page's conditions live in `Assets/js/<Page>.js`, loaded as a classic script, because browsers block modules on `file://`.
 6. **Every state documents itself.** Every action of rule 3 has an Info Popup next to it, and every state has one next to its `<h1>`. A state with a modal repeats that one next to the modal's title, because the `<h1>` behind the modal can't be clicked.
 7. **The site has one default entry.** The `index.html` at the root is what opens when no state is named. It is not a state: it has no screen and only redirects to the first state, with `<meta http-equiv="refresh">`.
 
 ## Info Popup
 
-A `?` button next to a component, which opens a popup explaining what the action does and which states it leads to.
+A `?` button next to a component, which opens a popup explaining what the action does and which states it leads to. It is a library of the architecture, not a file of the project: it lives in `Lib/` of [this repository](https://github.com/NEWMOLJUD/Arquiproto_provisorio), which is public, and depends on nothing else.
 
 ### Usage
 
-Load the two files in each state:
+Load the two files in each state from their public URL:
 
 ```html
-<link rel="stylesheet" href="../../Assets/css/info-popup.css">
-<script src="../../Assets/js/info-popup.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NEWMOLJUD/Arquiproto_provisorio@main/Lib/info-popup.css">
+<script src="https://cdn.jsdelivr.net/gh/NEWMOLJUD/Arquiproto_provisorio@main/Lib/info-popup.js"></script>
 ```
 
 Then put a `<template data-info-popup>` right after the component, with the popup's text inside. A `<template>` renders nothing, so the state works the same without the script.
@@ -73,16 +72,16 @@ The script adds one `?` button per template. The popup closes with its × button
 - Next to the `<h1>`, write two paragraphs with one sentence each: what the page is for, then what the user sees and when.
 - An item without an action, such as a field, a text or an error message, has no popup, because it is already on the screen.
 
-### Reuse
+### Loading
 
-The implementation in [this repository](https://github.com/NEWMOLJUD/Arquiproto_provisorio) is public and depends on nothing else, so you can use it instead of writing your own. Either copy `Assets/js/info-popup.js` and `Assets/css/info-popup.css` to your own `Assets/`, or load them from this URL:
+Don't load the files from `raw.githubusercontent.com`, because browsers block a script served as `text/plain`.
+
+Without a connection the `?` buttons don't appear and the state keeps working. To keep them offline, copy `Lib/` to the project's root and load the files by relative path, as the example app does:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NEWMOLJUD/Arquiproto_provisorio@main/Assets/css/info-popup.css">
-<script src="https://cdn.jsdelivr.net/gh/NEWMOLJUD/Arquiproto_provisorio@main/Assets/js/info-popup.js"></script>
+<link rel="stylesheet" href="../../Lib/info-popup.css">
+<script src="../../Lib/info-popup.js"></script>
 ```
-
-Don't use `raw.githubusercontent.com`, because browsers block a script served as `text/plain`. The example app uses the local files, so it keeps working offline.
 
 ## Example
 
