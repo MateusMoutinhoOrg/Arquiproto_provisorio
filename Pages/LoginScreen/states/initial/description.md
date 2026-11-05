@@ -1,3 +1,3 @@
-## Initial State
+# LoginScreen/initial
 
-its the basic login screen when user acess / 
+Empty login form, shown when the user accesses `/`.

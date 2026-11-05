@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginScreen/email_already_exists</title>
+    <style>
+        body { font-family: sans-serif; max-width: 320px; margin: 4rem auto; padding: 0 1rem; }
+        input, button { display: block; width: 100%; box-sizing: border-box; margin-bottom: .5rem; padding: .5rem; }
+        p { color: #b00020; }
+    </style>
+</head>
+
+<body>
+    <h1>Login</h1>
+
+    <p role="alert">Email already exists</p>
+
+    <form id="login" novalidate autocomplete="off">
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
+        <button>Confirm</button>
+    </form>
+
+    <a href="../../../CreateAccount/states/initial/index.html">Create account</a>
+
+    <script>
+        window.onpageshow = function () {
+            document.getElementById("login").reset();
+        };
+
+        document.getElementById("login").onsubmit = function (event) {
+            event.preventDefault();
+            var email = document.getElementById("email").value;
+            location.href = email === "user@example.com"
+                ? "../../../Home/states/initial/index.html"
+                : "../email_already_exists/index.html";
+        };
+    </script>
+</body>
+
+</html>
